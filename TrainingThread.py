@@ -2,6 +2,9 @@ from PyQt5.QtCore import QThread, pyqtSignal
 from Network import NeuralNetwork
 
 class TrainingThread(QThread):
+    '''
+    god forgive anyone who has to read this
+    '''
     epoch_update = pyqtSignal(int, float, float)
     TrainingComplete = pyqtSignal()
 

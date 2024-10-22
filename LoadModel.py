@@ -82,6 +82,7 @@ class ONNXLoader(QDialog):
 
     def LoadModel(self):
         """Start the Netron server and display the model."""
+        self.CloseLoadedModel()
         file_path = self.model_path_input.text()
         if file_path:
             print(f"Loading model: {file_path}")
@@ -164,9 +165,21 @@ class ONNXLoader(QDialog):
         """Display an error message."""
         QMessageBox.critical(self, "Error", message)
 
-    def closeEvent(self, event):
-        """Ensure the Netron server is terminated on close."""
+    def CloseLoadedModel(self):
+        if hasattr(self, 'session') and self.session is not None:
+            print(f'Exiting Netron server')
+            self.session = None
+        
         if self.server_process.state() == QProcess.Running:
+            print(f'Terminating Session')
             self.server_process.terminate()
             self.server_process.waitForFinished()
+        else:
+            print(f'No Process running')
+        self.web_view.reload()
+
+
+    def closeEvent(self, event):
+        """Ensure the Netron server is terminated on close."""
+        self.CloseLoadedModel()
         super().closeEvent(event)

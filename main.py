@@ -32,7 +32,7 @@ class ControlPanelGUI(QMainWindow):
         self.fig, self.ax = None, None
         self.loss_data, self.accuracy_data, self.epoch_data = [], [], []
         curr_date_time = datetime.now().strftime(r"%Y%m%d_%H%M")
-        self.model_name = f"trained_model {curr_date_time}.onnx"
+        self.model_name = f"trained_model_{curr_date_time}.onnx"
 
         # UI initialization
         self.InitUI()
