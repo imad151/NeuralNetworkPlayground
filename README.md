@@ -67,7 +67,9 @@ netron_executable = r'C:\Users\[user]\AppData\Roaming\Python\Python312\Scripts\n
 
 ## **Datasets**
 
-Currently, No dataset is directly shipped so you'll have to download one on your own. Download MNIST dataseta (here)[https://drive.google.com/file/d/1eEKzfmEu6WKdRlohBQiqi3PhW_uIVJVP/view?usp=sharing/], rename it to `mnist_train.csv` and save it to `ProjectFolder/Datasets/`.
+- Currently, No dataset is directly shipped so you'll have to download one on your own.
+- Download MNIST dataseta [here](https://drive.google.com/file/d/1eEKzfmEu6WKdRlohBQiqi3PhW_uIVJVP/view?usp=sharing/)
+- Rename it to `mnist_train.csv` and save it to `ProjectFolder/Datasets/`.
 ---
 
 ## **Contact**
